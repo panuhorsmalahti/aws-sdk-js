@@ -17436,7 +17436,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
 	 * get the Object implementation, which is slower but behaves correctly.
 	 */
-	Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+	Buffer.TYPED_ARRAY_SUPPORT = (global && global.TYPED_ARRAY_SUPPORT) !== undefined
 	  ? global.TYPED_ARRAY_SUPPORT
 	  : typedArraySupport()
 
@@ -25100,7 +25100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
 		 * get the Object implementation, which is slower but behaves correctly.
 		 */
-		Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+		Buffer.TYPED_ARRAY_SUPPORT = (global && global.TYPED_ARRAY_SUPPORT) !== undefined
 		  ? global.TYPED_ARRAY_SUPPORT
 		  : typedArraySupport()
 
