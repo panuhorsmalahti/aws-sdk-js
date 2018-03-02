@@ -17496,7 +17496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return {
 	    update: function (data) {
 	      if(!Buffer.isBuffer(data)) data = new Buffer(data)
-	        
+
 	      bufs.push(data)
 	      length += data.length
 	      return this
@@ -17598,7 +17598,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
 	 * get the Object implementation, which is slower but behaves correctly.
 	 */
-	Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+	Buffer.TYPED_ARRAY_SUPPORT = (global || {}).TYPED_ARRAY_SUPPORT !== undefined
 	  ? global.TYPED_ARRAY_SUPPORT
 	  : typedArraySupport()
 
@@ -19721,7 +19721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	
+
 	/**
 	 * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
 	 * in FIPS 180-2
@@ -19826,7 +19826,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return bytes;
 	  }
 
-	  if (_global.crypto && crypto.getRandomValues) {
+	  if (_global && _global.crypto && crypto && crypto.getRandomValues) {
 	    whatwgRNG = function(size) {
 	      var bytes = new Uint8Array(size);
 	      crypto.getRandomValues(bytes);
@@ -25103,7 +25103,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
 		 * get the Object implementation, which is slower but behaves correctly.
 		 */
-		Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+		Buffer.TYPED_ARRAY_SUPPORT = (global || {}).TYPED_ARRAY_SUPPORT !== undefined
 		  ? global.TYPED_ARRAY_SUPPORT
 		  : typedArraySupport()
 
